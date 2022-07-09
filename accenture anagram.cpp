@@ -2,30 +2,32 @@
 using namespace std;
 int main(){
 	string d,c;
-	int val;
-	cin>>d>>c;
-	set<char>s;
-	int f=d.length();
-	int g=c.length();
-	if(f==g){
-	for(int i=0;i<f;i++){
-		if(s.find(d[i])==s.end()){
-			s.insert(d[i]); //build
-		}
-	}
-	for(int j=0;j<g;j++){
-		if(s.find(c[j])==s.end()){
-			 val=1;
-		}
-	}
-	if(val==1){
-		cout<<"no"<<endl;
-	}
-	else{
-		cout<<"yes"<<endl;
-	}
+	cin>>s0>>s1;
+	int n=s0.length();
+	int g=s1.length();
+    bool val;
+    int arr[26]={0};
+    if(n==g){
+          for(int i=0;i<n;i++){
+              arr[s0[i]-97]++;
+          }
+          for(int j=0;j<g;j++){
+              arr[s1[j]-97]--;
+          }
+          for(int i=0;i<26;i++){
+              if(arr[i]==0){
+                  val=true;
+              }
+              else{
+                  val=false;
+                  break;
+              }
+          }
+        }
+    else{
+        return false;
+    }
+	return val;
 }
-else{
-	cout<<"no"<<endl;
-}
-}
+
+//use function to do...
